@@ -12,6 +12,7 @@ object MainListItems {
 
     init {
         addItem(Item(MainActivity::class.java, "主界面"))
+        addItem(Item(MainActivity::class.java, "主界面2"))
     }
 
     private fun addItem(item: Item) {
