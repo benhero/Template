@@ -17,11 +17,8 @@ class ManiListAdapter : RecyclerView.Adapter<ManiListAdapter.ViewHolder>() {
     private val list = MainListItems.ITEMS
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val context = parent.context
-        val root = LayoutInflater.from(context).inflate(R.layout.main_list_item_layout, parent, false)
-        return ViewHolder(root)
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.main_list_item_layout, parent, false))
     }
-
 
     override fun getItemCount(): Int {
         return list.size
