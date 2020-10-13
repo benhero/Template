@@ -1,8 +1,10 @@
 package com.ben.template
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ben.framework.XFramework
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -19,5 +21,7 @@ class MainActivity : AppCompatActivity() {
         val adapter = ManiListAdapter()
         main_list.adapter = adapter
         main_list.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+
+        Toast.makeText(XFramework.app, "Hello", Toast.LENGTH_SHORT).show()
     }
 }

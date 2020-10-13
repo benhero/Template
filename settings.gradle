@@ -1,2 +1,3 @@
+include ':XFramework'
 include ':app'
-rootProject.name='Template'
+rootProject.name = 'Template'

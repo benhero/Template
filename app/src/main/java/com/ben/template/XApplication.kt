@@ -1,9 +1,10 @@
 package com.ben.template
 
 import android.app.Application
+import com.ben.framework.XFramework
 
 /**
- * com.ben.template
+ * Application
  *
  * @author Benhero
  * @date   2020/8/25
@@ -16,5 +17,6 @@ class XApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         app = this
+        XFramework.app = this
     }
 }
