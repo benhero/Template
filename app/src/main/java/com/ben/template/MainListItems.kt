@@ -1,5 +1,7 @@
 package com.ben.template
 
+import com.ben.template.recycler.RecyclerViewActivity
+
 /**
  * 主界面列表选项
  *
@@ -11,7 +13,7 @@ object MainListItems {
     private val ITEM_MAP = HashMap<Class<*>, Item>()
 
     init {
-        addItem(Item(MainActivity::class.java, "主界面"))
+        addItem(Item(RecyclerViewActivity::class.java, "RecyclerView"))
         addItem(Item(MainActivity::class.java, "主界面2"))
     }
 
