@@ -31,7 +31,7 @@
 
             <View
                 cornerRadius="@{18}"
-                strokeColor="@{0xFF2196F3}"
+                strokeColor="@{@color/colorPrimary}"
                 strokeWidth="@{2}"
                 android:layout_width="260dp"
                 android:layout_height="60dp"
