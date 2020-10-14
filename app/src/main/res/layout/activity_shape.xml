@@ -23,15 +23,15 @@
 
             <View
                 cornerRadius="@{30}"
-                gradientEnd='@{"#FFFF4081"}'
-                gradientStart='@{"#FF1976D2"}'
+                gradientEnd="@{0xFFFF4081}"
+                gradientStart="@{0xFF1976D2}"
                 android:layout_width="260dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="18dp" />
 
             <View
                 cornerRadius="@{18}"
-                strokeColor='@{"#FF2196F3"}'
+                strokeColor="@{0xFF2196F3}"
                 strokeWidth="@{2}"
                 android:layout_width="260dp"
                 android:layout_height="60dp"

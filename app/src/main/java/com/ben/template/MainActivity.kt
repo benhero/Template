@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         main_list.adapter = adapter
         main_list.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        MainHandler.postDelay(Runnable {
+        MainHandler.postDelay({
             val position = MainListItems.getIndex(ShapeActivity::class.java)
             val child = main_list.getChildAt(position)
             val childViewHolder = main_list.getChildViewHolder(child) as ManiListAdapter.ViewHolder
