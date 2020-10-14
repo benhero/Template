@@ -1,10 +1,9 @@
 package com.ben.template
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ben.framework.XFramework
+import com.ben.framework.MainHandler
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -22,6 +21,11 @@ class MainActivity : AppCompatActivity() {
         main_list.adapter = adapter
         main_list.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        Toast.makeText(XFramework.app, "Hello", Toast.LENGTH_SHORT).show()
+        MainHandler.postDelay(Runnable {
+            val position = MainListItems.getIndex(ShapeActivity::class.java)
+            val child = main_list.getChildAt(position)
+            val childViewHolder = main_list.getChildViewHolder(child) as ManiListAdapter.ViewHolder
+            childViewHolder.itemView.performClick()
+        }, 50)
     }
 }
