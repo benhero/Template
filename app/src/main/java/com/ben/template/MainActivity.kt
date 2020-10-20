@@ -21,11 +21,13 @@ class MainActivity : AppCompatActivity() {
         main_list.adapter = adapter
         main_list.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
+        // 自动点击的类
+        val className = ShapeActivity::class.java
         MainHandler.post(50) {
-            val position = MainListItems.getIndex(ShapeActivity::class.java)
+            val position = MainListItems.getIndex(className)
             val child = main_list.getChildAt(position)
             val childViewHolder = main_list.getChildViewHolder(child) as ManiListAdapter.ViewHolder
-            childViewHolder.itemView.performClick()
+//            childViewHolder.itemView.performClick()
         }
     }
 }

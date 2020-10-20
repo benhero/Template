@@ -14,7 +14,6 @@ object MainListItems {
 
     init {
         addItem(Item(RecyclerViewActivity::class.java, "RecyclerView"))
-        addItem(Item(MainActivity::class.java, "主界面2"))
         addItem(Item(ShapeActivity::class.java, "Shape图形"))
     }
 
