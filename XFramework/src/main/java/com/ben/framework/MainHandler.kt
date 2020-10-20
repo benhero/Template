@@ -12,11 +12,7 @@ import android.os.Looper
 object MainHandler {
     private val handler: Handler = Handler(Looper.getMainLooper())
 
-    fun post(runnable:()-> Unit) {
-        handler.post(runnable)
-    }
-
-    fun postDelay(runnable:()-> Unit, delayMillis: Long) {
+    fun post(delayMillis: Long = 0, runnable: () -> Unit) {
         handler.postDelayed(runnable, delayMillis)
     }
 }
