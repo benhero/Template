@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ben.framework.MainHandler
+import com.ben.template.function.CoroutineActivity
+import com.ben.template.function.ShapeActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -22,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         main_list.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         // 自动点击的类
-        val className = ShapeActivity::class.java
+        val className = CoroutineActivity::class.java
         MainHandler.post(50) {
             val position = MainListItems.getIndex(className)
             val child = main_list.getChildAt(position)

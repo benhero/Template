@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ben.template">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".XApplication"
         android:allowBackup="true"
@@ -10,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShapeActivity" />
+
+        <activity android:name=".function.CoroutineActivity"></activity>
+        <activity android:name=".function.ShapeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".recycler.RecyclerViewActivity"
+            android:name=".function.recycler.RecyclerViewActivity"
             android:label="RecyclerView" />
     </application>
 

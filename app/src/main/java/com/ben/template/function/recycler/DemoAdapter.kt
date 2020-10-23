@@ -1,4 +1,4 @@
-package com.ben.template.recycler
+package com.ben.template.function.recycler
 
 import android.view.LayoutInflater
 import android.view.View

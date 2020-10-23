@@ -1,6 +1,8 @@
 package com.ben.template
 
-import com.ben.template.recycler.RecyclerViewActivity
+import com.ben.template.function.CoroutineActivity
+import com.ben.template.function.ShapeActivity
+import com.ben.template.function.recycler.RecyclerViewActivity
 
 /**
  * 主界面列表选项
@@ -15,6 +17,7 @@ object MainListItems {
     init {
         addItem(Item(RecyclerViewActivity::class.java, "RecyclerView"))
         addItem(Item(ShapeActivity::class.java, "Shape图形"))
+        addItem(Item(CoroutineActivity::class.java, "协程"))
     }
 
     private fun addItem(item: Item) {
