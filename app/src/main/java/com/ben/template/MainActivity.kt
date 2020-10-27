@@ -4,8 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ben.framework.MainHandler
-import com.ben.template.function.CoroutineActivity
-import com.ben.template.function.ShapeActivity
+import com.ben.template.function.coroutine.CoroutineActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**

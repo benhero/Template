@@ -1,6 +1,6 @@
 package com.ben.template
 
-import com.ben.template.function.CoroutineActivity
+import com.ben.template.function.coroutine.CoroutineActivity
 import com.ben.template.function.ShapeActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
 

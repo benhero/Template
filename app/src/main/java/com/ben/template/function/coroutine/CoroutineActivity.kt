@@ -1,4 +1,4 @@
-package com.ben.template.function
+package com.ben.template.function.coroutine
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -23,7 +23,6 @@ class CoroutineActivity : AppCompatActivity() {
             val bitmap =
                 loadImage("https://images.unsplash.com/photo-1603139875501-8c965c19e10d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80")
             imageView.setImageBitmap(bitmap)
-
         }
     }
 
