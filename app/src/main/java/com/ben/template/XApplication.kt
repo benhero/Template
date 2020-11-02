@@ -1,7 +1,11 @@
 package com.ben.template
 
 import android.app.Application
+import android.util.Log
 import com.ben.framework.XFramework
+import com.maning.librarycrashmonitor.MCrashMonitor
+import com.maning.librarycrashmonitor.listener.MCrashCallBack
+import java.io.File
 
 /**
  * Application
@@ -18,5 +22,11 @@ class XApplication : Application() {
         super.onCreate()
         app = this
         XFramework.app = this
+
+        MCrashMonitor.init(this, BuildConfig.DEBUG, object : MCrashCallBack {
+            override fun onCrash(file: File?) {
+                Log.i("JKL", "onCrash: " + file?.path)
+            }
+        })
     }
 }
