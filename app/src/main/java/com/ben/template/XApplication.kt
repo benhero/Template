@@ -23,10 +23,6 @@ class XApplication : Application() {
         app = this
         XFramework.app = this
 
-        MCrashMonitor.init(this, BuildConfig.DEBUG, object : MCrashCallBack {
-            override fun onCrash(file: File?) {
-                Log.i("JKL", "onCrash: " + file?.path)
-            }
-        })
+        MCrashMonitor.init(this, BuildConfig.DEBUG)
     }
 }
