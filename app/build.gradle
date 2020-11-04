@@ -62,4 +62,7 @@ dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.github.maning0303:MNCrashMonitor:V1.2.0'
+
+    // 多分辨率自适应
+    implementation 'me.jessyan:autosize:1.2.1'
 }

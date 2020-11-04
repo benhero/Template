@@ -1,5 +1,6 @@
 package com.ben.template
 
+import com.ben.template.function.AutoSizeActivity
 import com.ben.template.function.coroutine.CoroutineActivity
 import com.ben.template.function.ShapeActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
@@ -18,6 +19,7 @@ object MainListItems {
         addItem(Item(RecyclerViewActivity::class.java, "RecyclerView"))
         addItem(Item(ShapeActivity::class.java, "Shape图形"))
         addItem(Item(CoroutineActivity::class.java, "协程"))
+        addItem(Item(AutoSizeActivity::class.java, "自适应"))
     }
 
     private fun addItem(item: Item) {

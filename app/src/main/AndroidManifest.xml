@@ -12,8 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".function.coroutine.CoroutineActivity"></activity>
+        <activity android:name=".function.AutoSizeActivity" />
+        <activity android:name=".function.coroutine.CoroutineActivity" />
         <activity android:name=".function.ShapeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -25,6 +25,13 @@
         <activity
             android:name=".function.recycler.RecyclerViewActivity"
             android:label="RecyclerView" />
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="640" />
     </application>
 
 </manifest>
