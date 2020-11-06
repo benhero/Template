@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ben.framework.MainHandler
 import com.ben.template.function.coroutine.CoroutineActivity
-import com.elvishew.xlog.XLog
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -31,6 +30,6 @@ class MainActivity : AppCompatActivity() {
             val childViewHolder = main_list.getChildViewHolder(child) as ManiListAdapter.ViewHolder
 //            childViewHolder.itemView.performClick()
         }
-        XLog.t().st(3).b().i("hello")
+//        XLog.t().st(3).b().i("hello")
     }
 }

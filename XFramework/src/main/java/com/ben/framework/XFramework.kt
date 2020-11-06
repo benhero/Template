@@ -1,6 +1,7 @@
 package com.ben.framework
 
 import android.app.Application
+import com.maning.librarycrashmonitor.MCrashMonitor
 
 /**
  * 通用框架入口
@@ -13,5 +14,6 @@ object XFramework {
 
     fun init(application: Application) {
         app = application
+        MCrashMonitor.init(app, BuildConfig.DEBUG)
     }
 }
