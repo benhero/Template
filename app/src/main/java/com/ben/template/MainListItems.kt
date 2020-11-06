@@ -1,6 +1,7 @@
 package com.ben.template
 
 import com.ben.template.function.AutoSizeActivity
+import com.ben.template.function.ConstraintLayoutActivity
 import com.ben.template.function.coroutine.CoroutineActivity
 import com.ben.template.function.ShapeActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
@@ -20,6 +21,7 @@ object MainListItems {
         addItem(Item(ShapeActivity::class.java, "Shape图形"))
         addItem(Item(CoroutineActivity::class.java, "协程"))
         addItem(Item(AutoSizeActivity::class.java, "自适应"))
+        addItem(Item(ConstraintLayoutActivity::class.java, "ConstraintLayout"))
     }
 
     private fun addItem(item: Item) {
