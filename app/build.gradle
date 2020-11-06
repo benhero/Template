@@ -65,4 +65,6 @@ dependencies {
 
     // 多分辨率自适应
     implementation 'me.jessyan:autosize:1.2.1'
+
+    implementation 'com.elvishew:xlog:1.6.1'
 }

@@ -1,11 +1,13 @@
 package com.ben.template
 
 import android.app.Application
-import android.util.Log
 import com.ben.framework.XFramework
+import com.elvishew.xlog.LogConfiguration
+import com.elvishew.xlog.LogLevel
+import com.elvishew.xlog.XLog
+import com.elvishew.xlog.formatter.border.DefaultBorderFormatter
+import com.elvishew.xlog.internal.SystemCompat
 import com.maning.librarycrashmonitor.MCrashMonitor
-import com.maning.librarycrashmonitor.listener.MCrashCallBack
-import java.io.File
 
 /**
  * Application
@@ -24,5 +26,18 @@ class XApplication : Application() {
         XFramework.app = this
 
         MCrashMonitor.init(this, BuildConfig.DEBUG)
+        initLog()
+    }
+
+    private fun initLog() {
+        val builder = LogConfiguration.Builder()
+        builder.tag("JKL")
+        builder.borderFormatter(object : DefaultBorderFormatter() {
+            override fun format(data: Array<out String>?): String {
+                val format = super.format(data)
+                return "|" + SystemCompat.lineSeparator + format
+            }
+        })
+        XLog.init(LogLevel.ALL, builder.build())
     }
 }
