@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.ben.framework.util.isVisible
 import com.ben.framework.util.setVisible
 import com.ben.template.R
 import kotlinx.android.synthetic.main.activity_constraint_layout.*
@@ -16,6 +17,7 @@ class ConstraintLayoutActivity : AppCompatActivity(), View.OnClickListener {
         textView5.setOnClickListener(this)
         textView13.setOnClickListener(this)
         textView21.setOnClickListener(this)
+        textView24.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -42,6 +44,9 @@ class ConstraintLayoutActivity : AppCompatActivity(), View.OnClickListener {
                         textView13.text = "spread"
                     }
                 }
+            }
+            textView24 -> {
+                barrier_group.setVisible(!barrier_group.isVisible())
             }
             else -> {
             }
