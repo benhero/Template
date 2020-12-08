@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ben.framework.MainHandler
 import com.ben.template.function.recycler.RecyclerViewActivity
+import com.ben.template.function.retrofit.RetrofitActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -23,13 +24,13 @@ class MainActivity : AppCompatActivity() {
         main_list.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         // 自动点击的类
-        val className = RecyclerViewActivity::class.java
+        val className = RetrofitActivity::class.java
         MainHandler.post(50) {
             val position = MainListItems.getIndex(className)
             // item若没有显示在画面上，则是不会加载到RecyclerView中，所以拿到的child可能为空
             val child = main_list.getChildAt(position) ?: return@post
             val childViewHolder = main_list.getChildViewHolder(child) as ManiListAdapter.ViewHolder
-//            childViewHolder.itemView.performClick()
+            childViewHolder.itemView.performClick()
         }
 //        XLog.t().st(3).b().i("hello")
     }

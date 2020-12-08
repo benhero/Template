@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".function.retrofit.RetrofitActivity">
+
+    <EditText
+        android:id="@+id/src_text"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="18dp"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:text="Hello"
+        app:layout_constraintEnd_toStartOf="@id/dst_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/dst_text"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="18dp"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/src_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/translate_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="18dp"
+        android:text="翻译"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/src_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

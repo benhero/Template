@@ -5,6 +5,7 @@ import com.ben.template.function.ConstraintLayoutActivity
 import com.ben.template.function.coroutine.CoroutineActivity
 import com.ben.template.function.ShapeActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
+import com.ben.template.function.retrofit.RetrofitActivity
 
 /**
  * 主界面列表选项
@@ -22,6 +23,7 @@ object MainListItems {
         addItem(Item(CoroutineActivity::class.java, "协程"))
         addItem(Item(AutoSizeActivity::class.java, "自适应"))
         addItem(Item(ConstraintLayoutActivity::class.java, "ConstraintLayout"))
+        addItem(Item(RetrofitActivity::class.java, "Retrofit"))
     }
 
     private fun addItem(item: Item) {
