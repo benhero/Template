@@ -5,12 +5,12 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 /**
- * com.ben.template.function.retrofit
+ * Get请求接口
  *
- * @author chenbenbin
+ * @author Benhero
  * @date   12/8/20
  */
-interface GetRequest_Interface {
+interface GetRequestApi {
 
 //    @GET("?q=hello&from=en&to=zh")
 //    fun getCall(): Call<Translation>
@@ -20,8 +20,5 @@ interface GetRequest_Interface {
         @Query("q") word: String = "hello",
         @Query("from") from: String = "zh",
         @Query("to") to: String = "en"
-    ): Call<Translation>
-//
-//    @GET("users/{user}/repos")
-//    fun listRepos(@Path("user") user: String?): Call<List<Repo?>?>?
+    ): Call<TranslationResponse>
 }

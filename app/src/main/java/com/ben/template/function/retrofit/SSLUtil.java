@@ -9,23 +9,18 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 
-import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
 /**
- * Created:     by leon
- * Date:        2018/6/8
- * Description:
+ * SSL认证处理
  */
-
-public class HttpsUtil {
+public class SSLUtil {
     public static class SSLParams {
         public SSLSocketFactory sSLSocketFactory;
         public X509TrustManager trustManager;
@@ -50,13 +45,6 @@ public class HttpsUtil {
             e.printStackTrace();
         }
         return sslParams;
-    }
-
-    public static class UnSafeHostnameVerifier implements HostnameVerifier {
-        @Override
-        public boolean verify(String hostname, SSLSession session) {
-            return true;
-        }
     }
 
     private static class UnSafeTrustManager implements X509TrustManager {

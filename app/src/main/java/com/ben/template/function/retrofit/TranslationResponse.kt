@@ -1,15 +1,15 @@
 package com.ben.template.function.retrofit
 
 /**
- * com.ben.template.function.retrofit
+ * 翻译返回数据
  *
- * @author chenbenbin
+ * @author Benhero
  * @date   12/8/20
  */
-data class Translation(
+data class TranslationResponse(
     val author: Author,
     val code: Int,
-    val `data`: Data,
+    val data: Data,
     val msg: String
 )
 
