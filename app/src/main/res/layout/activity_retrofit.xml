@@ -9,38 +9,106 @@
 
         <EditText
             android:id="@+id/src_text"
-            cornerRadius="@{14}"
-            solidColor="@{0xffecebf3}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="18dp"
-            android:gravity="center"
-            android:minHeight="120dp"
-            android:text="你好"
+            android:gravity="start"
+            android:text="你好世界"
             android:textColor="#000"
             android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@id/dst_text"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/dst_text"
-            cornerRadius="@{14}"
-            solidColor="@{0xffecebf3}"
+        <LinearLayout
+            android:id="@+id/get_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            android:gravity="center"
-            android:minHeight="120dp"
-            android:text=""
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@id/src_text"
+            android:layout_margin="18dp"
+            android:orientation="vertical"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/src_text"
-            app:layout_constraintTop_toTopOf="@id/src_text"
-            app:layout_constraintVertical_chainStyle="spread" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/src_text">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get请求"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/get_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="Hello world"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/post_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            android:orientation="vertical"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post请求"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/post_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="Hello world"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:background="#eeeeee"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/get_layout" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#eeeeee"
+            app:layout_constraintBottom_toTopOf="@id/post_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_layout" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#eeeeee"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_layout" />
 
         <Button
             android:id="@+id/translate_btn"
@@ -49,13 +117,14 @@
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_marginTop="24dp"
+            android:layout_marginBottom="18dp"
             android:gravity="center"
             android:text="翻译"
             android:textColor="#FFF"
             android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/src_text" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
