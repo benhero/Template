@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'walle'
 
 android {
     compileSdkVersion 30
@@ -31,10 +32,11 @@ android {
 
     buildTypes {
         debug {
+            minifyEnabled false
             signingConfig signingConfigs.debug
         }
         release {
-            minifyEnabled false
+            minifyEnabled true
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -43,6 +45,15 @@ android {
     dataBinding {
         enabled = true
     }
+}
+
+walle {
+    // 指定渠道包的输出路径
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
+    // 定制渠道包的APK的文件名称
+    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
+    // 渠道配置文件
+    channelFile = new File("${project.getProjectDir()}/channel")
 }
 
 dependencies {
@@ -62,4 +73,6 @@ dependencies {
 
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+    implementation 'com.meituan.android.walle:library:1.1.7'
 }
