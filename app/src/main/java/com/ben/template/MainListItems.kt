@@ -2,6 +2,7 @@ package com.ben.template
 
 import com.ben.template.function.AutoSizeActivity
 import com.ben.template.function.ConstraintLayoutActivity
+import com.ben.template.function.MotionLayoutActivity
 import com.ben.template.function.coroutine.CoroutineActivity
 import com.ben.template.function.ShapeActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
@@ -24,6 +25,7 @@ object MainListItems {
         addItem(Item(AutoSizeActivity::class.java, "自适应"))
         addItem(Item(ConstraintLayoutActivity::class.java, "ConstraintLayout"))
         addItem(Item(RetrofitActivity::class.java, "Retrofit"))
+        addItem(Item(MotionLayoutActivity::class.java, "MotionLayout"))
     }
 
     private fun addItem(item: Item) {
