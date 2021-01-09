@@ -5,11 +5,19 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@+id/start"
-        motion:duration="500">
+        motion:duration="500"
+        motion:motionInterpolator="linear">
         <OnSwipe
             motion:dragDirection="dragRight"
             motion:touchAnchorId="@+id/button"
             motion:touchAnchorSide="right" />
+        <KeyFrameSet >
+            <KeyPosition
+                motion:motionTarget="@+id/button"
+                motion:framePosition="50"
+                motion:percentY="-0.25"
+                motion:keyPositionType="pathRelative" />
+        </KeyFrameSet>
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
