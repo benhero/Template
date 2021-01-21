@@ -1,4 +1,4 @@
-package com.ben.template.function.extra
+package com.ben.template.function.external
 
 import android.app.KeyguardManager
 import android.content.ComponentName
@@ -11,6 +11,7 @@ import android.view.WindowManager
 import com.ben.framework.MainHandler
 import com.ben.template.R
 import com.ben.template.XApplication
+import com.ben.template.function.ShapeActivity
 import kotlinx.android.synthetic.main.activity_external.*
 
 /**

@@ -52,7 +52,7 @@
             android:taskAffinity="a.b.c"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".function.extra.ExternalActivity"
+            android:name=".function.external.ExternalActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -67,7 +67,7 @@
             android:screenOrientation="portrait" />
 
         <service
-            android:name=".function.extra.LiveWallpaperService"
+            android:name=".function.external.LiveWallpaperService"
             android:enabled="true"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_WALLPAPER">

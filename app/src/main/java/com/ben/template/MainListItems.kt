@@ -5,7 +5,7 @@ import com.ben.template.function.ConstraintLayoutActivity
 import com.ben.template.function.MotionLayoutActivity
 import com.ben.template.function.coroutine.CoroutineActivity
 import com.ben.template.function.ShapeActivity
-import com.ben.template.function.extra.ExternalActivity
+import com.ben.template.function.external.ExternalActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
 import com.ben.template.function.retrofit.RetrofitActivity
 

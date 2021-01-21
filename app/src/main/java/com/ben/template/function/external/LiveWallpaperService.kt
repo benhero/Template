@@ -1,4 +1,4 @@
-package com.ben.template.function.extra
+package com.ben.template.function.external
 
 import android.service.wallpaper.WallpaperService
 
