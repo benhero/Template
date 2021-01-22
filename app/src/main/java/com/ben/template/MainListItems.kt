@@ -5,6 +5,7 @@ import com.ben.template.function.ConstraintLayoutActivity
 import com.ben.template.function.MotionLayoutActivity
 import com.ben.template.function.coroutine.CoroutineActivity
 import com.ben.template.function.ShapeActivity
+import com.ben.template.function.app.AppListActivity
 import com.ben.template.function.external.ExternalActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
 import com.ben.template.function.retrofit.RetrofitActivity
@@ -28,6 +29,7 @@ object MainListItems {
         addItem(Item(RetrofitActivity::class.java, "Retrofit"))
         addItem(Item(MotionLayoutActivity::class.java, "MotionLayout"))
         addItem(Item(ExternalActivity::class.java, "应用外弹出"))
+        addItem(Item(AppListActivity::class.java, "应用列表"))
     }
 
     private fun addItem(item: Item) {

@@ -49,8 +49,8 @@
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
             android:noHistory="true"
-            android:taskAffinity="a.b.c"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:taskAffinity="a.b.c" />
         <activity
             android:name=".function.external.ExternalActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -64,6 +64,9 @@
         <activity
             android:name=".function.recycler.RecyclerViewActivity"
             android:label="RecyclerView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.app.AppListActivity"
             android:screenOrientation="portrait" />
 
         <service
