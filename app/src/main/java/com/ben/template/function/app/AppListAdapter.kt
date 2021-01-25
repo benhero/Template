@@ -21,7 +21,7 @@ import com.ben.template.XApplication
  * @author Benhero
  * @date   2021-01-22
  */
-class AppListAdapter(private val list: List<PackageInfo>) :
+class AppListAdapter( val list: ArrayList<PackageInfo>) :
     RecyclerView.Adapter<AppListAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
