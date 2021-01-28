@@ -78,7 +78,7 @@ internal class FlyAnimator : SimpleItemAnimator() {
     private fun remove(index: Int, holder: RecyclerView.ViewHolder) {
         removeAnimators.add(holder)
         val animation = TranslateAnimation(0f, (-1000).toFloat(), 0f, 0f)
-        animation.duration = 500
+        animation.duration = 300
         animation.setAnimationListener(object : AnimationListener {
             override fun onAnimationStart(animation: Animation) {
                 dispatchRemoveStarting(holder)

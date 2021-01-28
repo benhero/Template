@@ -29,7 +29,7 @@ class AppListActivity : AppCompatActivity() {
         clear_btn.setOnClickListener {
             appListAdapter.notifyItemRangeRemoved(0, appListAdapter.list.size)
             appListAdapter.list.clear()
-            MainHandler.post(1000) { finish() }
+            MainHandler.post(500) { finish() }
         }
     }
 
