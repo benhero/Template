@@ -1,13 +1,11 @@
 package com.ben.template
 
-import android.content.pm.ApplicationInfo
-import android.content.pm.PackageInfo
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ben.framework.MainHandler
 import com.ben.template.function.MotionLayoutActivity
+import com.example.learngradle.GradleTest
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -35,5 +33,7 @@ class MainActivity : AppCompatActivity() {
             val childViewHolder = main_list.getChildViewHolder(child) as ManiListAdapter.ViewHolder
 //            childViewHolder.itemView.performClick()
         }
+
+        GradleTest.logCurrentType()
     }
 }

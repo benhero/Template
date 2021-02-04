@@ -59,6 +59,12 @@ walle {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':XFramework')
+    if (aar.toBoolean()) {
+//        implementation files('../learnGradle/export/learnGradle-release.aar')
+        implementation fileTree(dir: '../learnGradle/export', include: ['*.aar'])
+    } else {
+        implementation project(':LearnGradle')
+    }
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     // 依赖协程核心库
