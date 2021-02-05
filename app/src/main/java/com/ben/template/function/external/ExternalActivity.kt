@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import com.ben.framework.MainHandler
 import com.ben.template.R
@@ -19,7 +20,7 @@ import kotlinx.android.synthetic.main.activity_external.*
  * @author Benhero
  * @date 2021/1/20
  */
-class ExternalActivity : AppCompatActivity() {
+class ExternalActivity : AppCompatActivity(), View.OnClickListener {
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         // 锁屏上弹出
@@ -35,12 +36,8 @@ class ExternalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         allowOnLockScreen()
         setContentView(R.layout.activity_external)
-        button.setOnClickListener {
-            MainHandler.post(5000) {
-                startActivity()
-            }
-            finish()
-        }
+        button.setOnClickListener(this)
+        btn_wallpaper.setOnClickListener(this)
     }
 
     /**
@@ -74,9 +71,25 @@ class ExternalActivity : AppCompatActivity() {
         intent.putExtra(
             "android.service.wallpaper.extra.LIVE_WALLPAPER_COMPONENT", ComponentName(
                 packageName,
-                LiveWallpaperService::class.java.getCanonicalName()
+                StaticWallpaper::class.java.getCanonicalName()
             )
         )
         startActivity(intent)
+    }
+
+    override fun onClick(v: View?) {
+        when (v) {
+            button -> {
+                MainHandler.post(5000) {
+                    startActivity()
+                }
+                finish()
+            }
+            btn_wallpaper -> {
+                setLiveWallPaper()
+            }
+            else -> {
+            }
+        }
     }
 }
