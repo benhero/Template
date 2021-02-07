@@ -4,6 +4,7 @@ import android.app.WallpaperManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
+import android.graphics.Rect
 import android.os.Environment
 import android.service.wallpaper.WallpaperService
 import android.view.SurfaceHolder
@@ -57,12 +58,15 @@ class StaticWallpaper : WallpaperService() {
             val canvas: Canvas = holder!!.lockCanvas()
 
             val saveBitmap = saveBitmap(wallpaperDrawable.toBitmap(), "/wallpaper.jpg")
-            canvas.drawBitmap(
-                if (saveBitmap != null) BitmapFactory.decodeFile(saveBitmap) else wallpaperDrawable.toBitmap(),
-                0f,
-                0f,
-                null
-            )
+
+            val bitmap =
+                if (saveBitmap != null) BitmapFactory.decodeFile(saveBitmap) else wallpaperDrawable.toBitmap()
+
+            val clipWidth = (1.0f * bitmap.height * canvas.width / canvas.height).toInt()
+
+            val src = Rect(0, 0, clipWidth, bitmap.height)
+            val dest = Rect(0, 0, canvas.width, canvas.height)
+            canvas.drawBitmap(bitmap, src, dest, null)
 
             holder.unlockCanvasAndPost(canvas)
         }
