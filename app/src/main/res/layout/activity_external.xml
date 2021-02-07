@@ -27,4 +27,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/check_wallpaper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_wallpaper"
+        app:layout_constraintEnd_toStartOf="@+id/btn_wallpaper"
+        app:layout_constraintTop_toTopOf="@+id/btn_wallpaper" />
 </androidx.constraintlayout.widget.ConstraintLayout>
