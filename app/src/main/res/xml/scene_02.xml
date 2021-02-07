@@ -17,6 +17,15 @@
                 motion:framePosition="50"
                 motion:percentY="-0.25"
                 motion:keyPositionType="pathRelative" />
+            <KeyPosition
+                motion:motionTarget="@+id/button"
+                motion:framePosition="70"
+                motion:keyPositionType="pathRelative"
+                motion:percentY="0.25" />
+            <KeyAttribute
+                motion:motionTarget="@+id/button"
+                motion:framePosition="20"
+                android:alpha="0.5" />
         </KeyFrameSet>
     </Transition>
 
