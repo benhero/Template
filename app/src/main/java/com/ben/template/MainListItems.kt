@@ -1,10 +1,7 @@
 package com.ben.template
 
-import com.ben.template.function.AutoSizeActivity
-import com.ben.template.function.ConstraintLayoutActivity
-import com.ben.template.function.MotionLayoutActivity
+import com.ben.template.function.*
 import com.ben.template.function.coroutine.CoroutineActivity
-import com.ben.template.function.ShapeActivity
 import com.ben.template.function.app.AppListActivity
 import com.ben.template.function.external.ExternalActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
@@ -30,6 +27,7 @@ object MainListItems {
         addItem(Item(MotionLayoutActivity::class.java, "MotionLayout"))
         addItem(Item(ExternalActivity::class.java, "应用外弹出"))
         addItem(Item(AppListActivity::class.java, "应用列表"))
+        addItem(Item(WebViewActivity::class.java, "浏览器"))
     }
 
     private fun addItem(item: Item) {

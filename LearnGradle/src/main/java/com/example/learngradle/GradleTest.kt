@@ -5,7 +5,7 @@ import android.util.Log
 /**
  * Gradle测试
  *
- * @author chenbenbin
+ * @author Benhero
  * @date   2021-02-01
  */
 object GradleTest {
