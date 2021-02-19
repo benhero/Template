@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.ben.template.function.ActionItem
+import com.ben.template.function.dispatchAction
 
 /**
  * 主界面列表适配器
@@ -17,7 +19,10 @@ class ManiListAdapter : RecyclerView.Adapter<ManiListAdapter.ViewHolder>() {
     private val list = MainListItems.ITEMS
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.main_list_item_layout, parent, false))
+        return ViewHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.main_list_item_layout, parent, false)
+        )
     }
 
     override fun getItemCount(): Int {
@@ -29,10 +34,14 @@ class ManiListAdapter : RecyclerView.Adapter<ManiListAdapter.ViewHolder>() {
         val item = list[index]
         holder.title.text = item.content
         holder.itemView.setOnClickListener {
-            try {
-                context.startActivity(Intent(context, item.className))
-            } catch (e: Exception) {
-                e.printStackTrace()
+            if (item.className == ActionItem::class.java) {
+                dispatchAction(item.content)
+            } else {
+                try {
+                    context.startActivity(Intent(context, item.className))
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
         }
     }
