@@ -6,10 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.ben.template.R
 import kotlinx.android.synthetic.main.activity_coroutine.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -18,6 +15,17 @@ class CoroutineActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutine)
 
+        loadImg()
+
+        CoroutineScope(Dispatchers.IO).launch {
+            Log.i("JKL", "Thread Name 1: " + Thread.currentThread().name)
+            withContext(Dispatchers.Main) {
+                Log.i("JKL", "Thread Name 2: " + Thread.currentThread().name)
+            }
+        }
+    }
+
+    private fun loadImg() {
         CoroutineScope(Dispatchers.Main).launch {
             Log.i("JKL", "onCreate: " + Thread.currentThread().name)
             val bitmap =
