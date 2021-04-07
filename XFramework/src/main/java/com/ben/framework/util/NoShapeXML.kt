@@ -1,7 +1,9 @@
 package com.ben.framework.util
 
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.StateListDrawable
 import android.view.View
 import androidx.databinding.BindingAdapter
 
@@ -84,4 +86,15 @@ private fun exchangeColor(color: Any): Int {
             0
         }
     }
+}
+
+@BindingAdapter("normalDrawable", "pressedDrawable", requireAll = true)
+fun setSelector(view: View, normalDrawable: Drawable, pressedDrawable: Drawable) {
+    val bg = StateListDrawable()
+    bg.addState(
+        intArrayOf(android.R.attr.state_pressed),
+        pressedDrawable
+    )
+    bg.addState(intArrayOf(), normalDrawable)
+    view.background = bg
 }

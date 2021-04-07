@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <ScrollView
@@ -36,6 +35,13 @@
                 android:layout_width="260dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="18dp" />
+
+            <ImageView
+                normalDrawable="@{@drawable/preview_btn_normal}"
+                pressedDrawable="@{@drawable/preview_btn_press}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true" />
 
         </LinearLayout>
 
