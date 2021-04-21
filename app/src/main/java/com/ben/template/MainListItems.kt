@@ -29,8 +29,8 @@ object MainListItems {
         addItem(Item(ExternalActivity::class.java, "应用外弹出"))
         addItem(Item(AppListActivity::class.java, "应用列表"))
         addItem(Item(WebViewActivity::class.java, "浏览器"))
-        addItem(Item(AsyncTestActivity::class.java, "异步回调监听处理"))
         addItem(Item(ActionItem::class.java, ActionItem.BROWSER.action))
+        addItem(Item(AsyncTestActivity::class.java, "异步回调监听处理"))
     }
 
     private fun addItem(item: Item) {
