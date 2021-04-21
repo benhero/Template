@@ -19,6 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".function.live.AsyncTestActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
@@ -64,7 +65,6 @@
         <activity
             android:name=".function.app.AppListActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".function.WebViewActivity"
             android:launchMode="singleTask"

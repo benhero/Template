@@ -1,9 +1,10 @@
 package com.ben.template
 
 import com.ben.template.function.*
-import com.ben.template.function.coroutine.CoroutineActivity
 import com.ben.template.function.app.AppListActivity
+import com.ben.template.function.coroutine.CoroutineActivity
 import com.ben.template.function.external.ExternalActivity
+import com.ben.template.function.live.AsyncTestActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
 import com.ben.template.function.retrofit.RetrofitActivity
 
@@ -28,6 +29,7 @@ object MainListItems {
         addItem(Item(ExternalActivity::class.java, "应用外弹出"))
         addItem(Item(AppListActivity::class.java, "应用列表"))
         addItem(Item(WebViewActivity::class.java, "浏览器"))
+        addItem(Item(AsyncTestActivity::class.java, "异步回调监听处理"))
         addItem(Item(ActionItem::class.java, ActionItem.BROWSER.action))
     }
 
