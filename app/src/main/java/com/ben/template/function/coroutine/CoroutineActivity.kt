@@ -41,6 +41,8 @@ class CoroutineActivity : AppCompatActivity() {
         httpURLConnection.requestMethod = "GET"
         httpURLConnection.connect()
         val inputStream = httpURLConnection.inputStream
-        return@withContext BitmapFactory.decodeStream(inputStream)
+        val bitmap = BitmapFactory.decodeStream(inputStream)
+        httpURLConnection.disconnect()
+        return@withContext bitmap
     }
 }
