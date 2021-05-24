@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.app.KeyguardManager
 import android.app.WallpaperManager
+import android.content.ActivityNotFoundException
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
@@ -71,7 +72,11 @@ class ExternalActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setLiveWallPaper() {
-        startLiveWallpaperPreview(this, packageName, StaticWallpaper::class.java.canonicalName)
+        try {
+            startLiveWallpaperPreview(this, packageName, StaticWallpaper::class.java.canonicalName)
+        } catch (e: ActivityNotFoundException) {
+            e.printStackTrace()
+        }
     }
 
     /**
