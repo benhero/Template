@@ -9,7 +9,10 @@ import com.ben.template.R
 import com.ben.template.databinding.ActivityRetrofitBinding
 import com.elvishew.xlog.XLog
 import kotlinx.android.synthetic.main.activity_retrofit.*
-import okhttp3.*
+import okhttp3.FormBody
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import okio.Buffer
 import retrofit2.Call
 import retrofit2.Callback
@@ -219,14 +222,14 @@ class RetrofitActivity : AppCompatActivity(), View.OnClickListener {
         when (v) {
             translate_btn -> {
                 try {
-                    get(src_text.text.toString().trim())
+//                    get(src_text.text.toString().trim())
                 } catch (e: Exception) {
                     e.printStackTrace()
                     Toast.makeText(this, "网络访问错误", Toast.LENGTH_SHORT).show()
                 }
 
                 try {
-//                    post(src_text.text.toString().trim())
+                    post(src_text.text.toString().trim())
                 } catch (e: Exception) {
                     e.printStackTrace()
                     Toast.makeText(this, "网络访问错误", Toast.LENGTH_SHORT).show()
