@@ -31,6 +31,7 @@ object MainListItems {
         addItem(Item(WebViewActivity::class.java, "浏览器"))
         addItem(Item(ActionItem::class.java, ActionItem.BROWSER.action))
         addItem(Item(AsyncTestActivity::class.java, "异步回调监听处理"))
+        addItem(Item(KotlinActivity::class.java, "Kotlin"))
     }
 
     private fun addItem(item: Item) {

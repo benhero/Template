@@ -21,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".function.live.AsyncTestActivity"></activity>
+        <activity android:name=".function.live.AsyncTestActivity" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
@@ -81,6 +81,9 @@
                 <data android:scheme="https" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".function.KotlinActivity"
+            android:screenOrientation="portrait" />
 
         <service
             android:name=".function.external.StaticWallpaper"

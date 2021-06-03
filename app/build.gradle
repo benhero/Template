@@ -78,9 +78,11 @@ dependencies {
     implementation dependencies.'core-ktx'
     implementation dependencies.'constraint-layout'
     implementation dependencies.'recyclerview'
+    implementation dependencies.'material'
 
     implementation dependencies.'retrofit'
     implementation dependencies.'retrofit-gson'
 
     implementation dependencies.'walle'
+
 }
