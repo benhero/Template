@@ -7,6 +7,7 @@ import com.ben.template.function.external.ExternalActivity
 import com.ben.template.function.live.AsyncTestActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
 import com.ben.template.function.retrofit.RetrofitActivity
+import com.ben.template.function.task.TaskActivity
 
 /**
  * 主界面列表选项
@@ -32,6 +33,7 @@ object MainListItems {
         addItem(Item(ActionItem::class.java, ActionItem.BROWSER.action))
         addItem(Item(AsyncTestActivity::class.java, "异步回调监听处理"))
         addItem(Item(KotlinActivity::class.java, "Kotlin"))
+        addItem(Item(TaskActivity::class.java, "任务流"))
     }
 
     private fun addItem(item: Item) {

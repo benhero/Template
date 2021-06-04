@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
+        <activity
+            android:name=".function.task.TaskActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".function.live.AsyncTestActivity" />
         <activity
             android:name=".MainActivity"
