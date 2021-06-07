@@ -90,11 +90,11 @@ abstract class BaseTaskNode : ITaskNode {
     /**
      * 执行操作
      */
-    abstract fun run()
+    abstract fun execute()
 
     override fun enter() {
         if (onEnter()) {
-            run()
+            execute()
         } else {
             exit()
         }
@@ -115,7 +115,7 @@ class Task1 : BaseTaskNode() {
         return true
     }
 
-    override fun run() {
+    override fun execute() {
         XLog.i("TaskFlow - run: 1")
         CoroutineScope(Dispatchers.IO).launch {
             Thread.sleep(1000)
@@ -135,7 +135,7 @@ class Task2 : BaseTaskNode() {
         return true
     }
 
-    override fun run() {
+    override fun execute() {
         XLog.i("TaskFlow - run: 2")
         CoroutineScope(Dispatchers.IO).launch {
             Thread.sleep(5000)
