@@ -34,6 +34,7 @@ object MainListItems {
         addItem(Item(AsyncTestActivity::class.java, "异步回调监听处理"))
         addItem(Item(KotlinActivity::class.java, "Kotlin"))
         addItem(Item(TaskActivity::class.java, "任务流"))
+        addItem(Item(ActionItem::class.java, ActionItem.WINDOW.action))
     }
 
     private fun addItem(item: Item) {

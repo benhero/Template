@@ -11,7 +11,8 @@ import com.ben.template.XApplication
  * @date   2021-02-19
  */
 enum class ActionItem(val action: String) {
-    BROWSER("打开浏览器");
+    BROWSER("打开浏览器"),
+    WINDOW("悬浮窗");
 }
 
 fun dispatchAction(actionName: String) {
@@ -25,6 +26,9 @@ fun dispatchAction(actionName: String) {
             val createChooser = Intent.createChooser(intent, "请选择浏览器")
             createChooser.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             XApplication.app.startActivity(createChooser)
+        }
+        ActionItem.WINDOW -> {
+            FloatWindowManager.show(XApplication.app)
         }
     }
 }
