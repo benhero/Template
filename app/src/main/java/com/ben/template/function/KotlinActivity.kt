@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.ben.template.R
+import java.util.*
 
 /**
  * Kotlin语法研究
@@ -13,7 +14,8 @@ class KotlinActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin)
-        array()
+//        array()
+        random()
     }
 
     private fun array() {
@@ -39,5 +41,43 @@ class KotlinActivity : AppCompatActivity() {
         Log.i("JKL", "onCreate: array3 : " + array3.contentToString())
         Log.i("JKL", "onCreate: array4 : " + array4.contentToString())
         Log.i("JKL", "onCreate: empty : " + empty.contentToString())
+    }
+
+    private fun random() {
+        val randomBox = RandomBox(intArrayOf(1, 2, 3, 4, 5).asList(), true)
+        for (i in 0..20) {
+            Log.i("JKL", "random: " + randomBox.random())
+        }
+    }
+
+
+    /**
+     * 随机盒子
+     * 返回指定队列里的数据，且周期内不重复返回
+     * @param list 指定队列
+     * @param isRecycled 是否循环复用：若随机取出全部数据后，是否重新开始；否则返回null
+     */
+    class RandomBox<T>(list: List<T>, private val isRecycled: Boolean) {
+        private val src = ArrayList<T>(list.size)
+        private val linkedList = LinkedList(list)
+
+        init {
+            list.forEach {
+                src.add(it)
+            }
+        }
+
+        fun random(): T? {
+            if (linkedList.isEmpty()) {
+                if (isRecycled) {
+                    linkedList.addAll(src)
+                } else {
+                    return null
+                }
+            }
+            val random = linkedList.random()
+            linkedList.remove(random)
+            return random
+        }
     }
 }
