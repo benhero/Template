@@ -5,6 +5,7 @@ import com.ben.template.function.app.AppListActivity
 import com.ben.template.function.coroutine.CoroutineActivity
 import com.ben.template.function.external.ExternalActivity
 import com.ben.template.function.live.AsyncTestActivity
+import com.ben.template.function.messenger.MessengerActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
 import com.ben.template.function.retrofit.RetrofitActivity
 import com.ben.template.function.task.TaskActivity
@@ -35,6 +36,7 @@ object MainListItems {
         addItem(Item(KotlinActivity::class.java, "Kotlin"))
         addItem(Item(TaskActivity::class.java, "任务流"))
         addItem(Item(ActionItem::class.java, ActionItem.WINDOW.action))
+        addItem(Item(MessengerActivity::class.java, "Messenger"))
     }
 
     private fun addItem(item: Item) {
