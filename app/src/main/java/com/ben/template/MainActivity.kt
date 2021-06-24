@@ -2,7 +2,7 @@ package com.ben.template
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.ben.framework.MainHandler
 import com.ben.template.function.live.AsyncTestActivity
 import com.example.learngradle.GradleTest
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val adapter = ManiListAdapter()
         main_list.adapter = adapter
-        main_list.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        main_list.layoutManager = GridLayoutManager(this, 2)
 
         // 自动点击的类
         val className = AsyncTestActivity::class.java
