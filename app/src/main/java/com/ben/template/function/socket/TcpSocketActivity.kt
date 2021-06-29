@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.os.SystemClock
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.ben.template.R
@@ -28,7 +29,11 @@ class TcpSocketActivity : AppCompatActivity(), View.OnClickListener {
     private val mHandler: Handler = object : Handler() {
         override fun handleMessage(msg: Message) {
             when (msg.what) {
-                MESSAGE_SOCKET_CONNECTED -> socket_like_btn.isEnabled = true
+                MESSAGE_SOCKET_CONNECTED -> {
+                    socket_like_btn.isEnabled = true
+                    socket_coin_btn.isEnabled = true
+                    socket_collect_btn.isEnabled = true
+                }
                 MESSAGE_RECEIVE_NEW_MSG ->
                     socket_text.text = socket_text.text.toString() + msg.obj as String
                 else -> {
@@ -54,18 +59,23 @@ class TcpSocketActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     /**
-     * 开启线程来连接Socket
+     * 连接Socket
      */
     private fun connectTCPServer() {
+        // 连接服务器
         var socket: Socket? = null
         while (socket == null) {
+            // 循环尝试连接服务器
+            Log.i("JKL", "尝试连接服务器")
             try {
+                // 创建套接字
                 socket = Socket("localhost", 8868)
                 mClientSocket = socket
+                // 发送数据
                 mPrintWrite =
                     PrintWriter(BufferedWriter(OutputStreamWriter(socket.getOutputStream())), true)
                 mHandler.sendEmptyMessage(MESSAGE_SOCKET_CONNECTED)
-                println("connect server success.")
+                Log.i("JKL", "连接服务器成功!")
             } catch (e: IOException) {
                 SystemClock.sleep(1000)
                 e.printStackTrace()
@@ -76,8 +86,10 @@ class TcpSocketActivity : AppCompatActivity(), View.OnClickListener {
         try {
             val br = BufferedReader(InputStreamReader(socket.getInputStream()))
             while (!this.isFinishing) {
+                Log.i("JKL", "尝试读取服务器消息")
+                // 读取服务器消息，阻塞类型
                 val msg = br.readLine()
-                println("receive :$msg")
+                Log.i("JKL", "收到服务器消息 :$msg")
                 if (msg != null) {
                     val time = formatDateTime(System.currentTimeMillis())
                     val showMsg = "server $time:$msg\n"
