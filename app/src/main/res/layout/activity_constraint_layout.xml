@@ -198,7 +198,6 @@
             android:text="Node 2"
             android:textColor="#FFF"
             app:layout_constraintEnd_toStartOf="@id/textView15"
-            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@+id/textView13"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -214,7 +213,6 @@
             android:text="Node 3"
             android:textColor="#FFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@+id/textView14"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 

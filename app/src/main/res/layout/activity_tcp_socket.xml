@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".function.socket.TcpSocketActivity">
+
+    <Button
+        android:id="@+id/socket_like_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="点赞"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/socket_coin_btn"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/socket_coin_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="投币"
+        app:layout_constraintBottom_toBottomOf="@id/socket_like_btn"
+        app:layout_constraintEnd_toStartOf="@+id/socket_collect_btn"
+        app:layout_constraintStart_toEndOf="@+id/socket_like_btn"
+        app:layout_constraintTop_toTopOf="@id/socket_like_btn" />
+
+    <Button
+        android:id="@+id/socket_collect_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="收藏"
+        app:layout_constraintBottom_toBottomOf="@id/socket_like_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/socket_coin_btn"
+        app:layout_constraintTop_toTopOf="@id/socket_like_btn" />
+
+    <TextView
+        android:id="@+id/socket_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:lineSpacingExtra="10dp"
+        android:padding="16dp"
+        android:textColor="#333"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="skdjflkjsdf\nadkjlfkjs" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

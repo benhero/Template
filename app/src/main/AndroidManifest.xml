@@ -4,6 +4,7 @@
     package="com.ben.template">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -92,13 +93,18 @@
         <activity
             android:name=".function.messenger.MessengerActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".function.transition.TransitionActivity1"
             android:screenOrientation="portrait" />
         <activity
             android:name=".function.transition.TransitionActivity2"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".function.socket.TcpSocketActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".function.socket.TCPServerService" />
 
         <service
             android:name=".function.messenger.MessengerService"
