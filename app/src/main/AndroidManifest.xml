@@ -104,7 +104,11 @@
             android:name=".function.socket.TcpSocketActivity"
             android:screenOrientation="portrait" />
 
-        <service android:name=".function.socket.TCPServerService" />
+        <service
+            android:name=".function.socket.TCPServerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
 
         <service
             android:name=".function.messenger.MessengerService"
