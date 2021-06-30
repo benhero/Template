@@ -28,9 +28,9 @@ class TCPServerService : Service() {
     )
 
     override fun onCreate() {
-        Log.i("JKL", "TCPServerService - onCreate: ")
         Thread(TcpServer()).start()
         super.onCreate()
+        Log.w("JKL", "服务器: Create - 服务启动完毕 ")
     }
 
     private inner class TcpServer : Runnable {
@@ -39,16 +39,15 @@ class TCPServerService : Service() {
                 //监听本地8688接口
                 ServerSocket(8868)
             } catch (e: IOException) {
-                System.err.println("establish tcp server failed,port：8868")
+                Log.e("JKL", "启动Socket失败，端口号：8868")
                 e.printStackTrace()
                 return
             }
             while (!mIsServiceDestroyed) {
                 try {
-                    //接收客户请求
-                    Log.i("JKL", "run: 接收客户请求")
+                    //接收客户端请求
                     val client = serverSocket.accept()
-                    println("accept")
+                    Log.i("JKL", "服务器: Connect - 连接客户端成功")
                     try {
                         responseClient(client)
                     } catch (e: IOException) {
@@ -63,7 +62,6 @@ class TCPServerService : Service() {
 
     @Throws(IOException::class)
     private fun responseClient(client: Socket) {
-        Log.i("JKL", "响应客户端")
         //用于接收客户消息
         val input = BufferedReader(InputStreamReader(client.getInputStream()))
         //用于向客户发送信息
@@ -72,21 +70,19 @@ class TCPServerService : Service() {
             true
         )
         out.println("欢迎来到聊天室！")
+        Log.i("JKL", "服务器: 发送《欢迎来到聊天室！》")
         while (!mIsServiceDestroyed) {
+            Log.i("JKL", "服务器: Wait - 等待客户端消息")
             val str = input.readLine()
-            println("msg from client:$str")
-            if (str == null) {
-                //客户端断开连接
+                ?: //客户端断开连接
                 break
-            }
             val i = Random().nextInt(mDefinedMessage.size)
             val msg = mDefinedMessage[i]
-            out.println("收到《$str》")
-            out.println(msg)
-            println("send :$msg")
+            out.println("收到《$str》- $msg")
+            Log.i("JKL", "服务器: 收到客户端消息《$str》，发送《$msg》")
         }
         //客户端退出的操作
-        println("client quit")
+        Log.e("JKL", "服务器: 接收到客户端关闭")
         //关闭流
         out.close()
         input.close()

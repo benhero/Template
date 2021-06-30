@@ -66,7 +66,7 @@ class TcpSocketActivity : AppCompatActivity(), View.OnClickListener {
         var socket: Socket? = null
         while (socket == null) {
             // 循环尝试连接服务器
-            Log.i("JKL", "尝试连接服务器")
+            Log.w("JKL", "客户端: Create - 尝试连接服务器")
             try {
                 // 创建套接字
                 socket = Socket("localhost", 8868)
@@ -75,7 +75,7 @@ class TcpSocketActivity : AppCompatActivity(), View.OnClickListener {
                 mPrintWrite =
                     PrintWriter(BufferedWriter(OutputStreamWriter(socket.getOutputStream())), true)
                 mHandler.sendEmptyMessage(MESSAGE_SOCKET_CONNECTED)
-                Log.i("JKL", "连接服务器成功!")
+                Log.i("JKL", "客户端: Connect - 连接服务器成功!")
             } catch (e: IOException) {
                 SystemClock.sleep(1000)
                 e.printStackTrace()
@@ -86,10 +86,10 @@ class TcpSocketActivity : AppCompatActivity(), View.OnClickListener {
         try {
             val br = BufferedReader(InputStreamReader(socket.getInputStream()))
             while (!this.isFinishing) {
-                Log.i("JKL", "尝试读取服务器消息")
+                Log.i("JKL", "客户端: Wait - 等待服务器消息")
                 // 读取服务器消息，阻塞类型
                 val msg = br.readLine()
-                Log.i("JKL", "收到服务器消息 :$msg")
+                Log.i("JKL", "客户端: Receive - 收到服务器消息 :$msg")
                 if (msg != null) {
                     val time = formatDateTime(System.currentTimeMillis())
                     val showMsg = "server $time:$msg\n"
@@ -105,6 +105,7 @@ class TcpSocketActivity : AppCompatActivity(), View.OnClickListener {
     override fun onDestroy() {
         if (mClientSocket != null) {
             try {
+                Log.e("JKL", "客户端: 退出, 关闭Socket")
                 mClientSocket!!.shutdownInput()
                 mClientSocket!!.close()
             } catch (e: IOException) {
