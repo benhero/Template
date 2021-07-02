@@ -1,9 +1,12 @@
 package com.ben.template
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ben.framework.MainHandler
+import com.ben.template.aidl.Book
+import com.ben.template.aidl.IBookManager
 import com.ben.template.function.live.AsyncTestActivity
 import com.example.learngradle.GradleTest
 import kotlinx.android.synthetic.main.activity_main.*

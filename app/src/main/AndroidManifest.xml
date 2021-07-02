@@ -24,6 +24,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
+        <activity android:name=".function.aidl.AidlActivity" />
         <activity
             android:name=".function.task.TaskActivity"
             android:screenOrientation="portrait" />
@@ -99,22 +100,10 @@
         <activity
             android:name=".function.transition.TransitionActivity2"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".function.socket.TcpSocketActivity"
             android:screenOrientation="portrait" />
 
-        <service
-            android:name=".function.socket.TCPServerService"
-            android:enabled="true"
-            android:exported="true"
-            android:process=":remote" />
-
-        <service
-            android:name=".function.messenger.MessengerService"
-            android:enabled="true"
-            android:exported="true"
-            android:process=":remote" />
         <service
             android:name=".function.external.StaticWallpaper"
             android:enabled="true"
@@ -128,6 +117,22 @@
                 android:name="android.service.wallpaper"
                 android:resource="@xml/live_wallpaper" />
         </service>
+
+        <service
+            android:name=".function.socket.TCPServerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+        <service
+            android:name=".function.messenger.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+        <service
+            android:name=".function.aidl.AidlService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
     </application>
 
 </manifest>

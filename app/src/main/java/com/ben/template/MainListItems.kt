@@ -1,6 +1,7 @@
 package com.ben.template
 
 import com.ben.template.function.*
+import com.ben.template.function.aidl.AidlActivity
 import com.ben.template.function.app.AppListActivity
 import com.ben.template.function.coroutine.CoroutineActivity
 import com.ben.template.function.external.ExternalActivity
@@ -41,6 +42,7 @@ object MainListItems {
         addItem(Item(MessengerActivity::class.java, "Messenger"))
         addItem(Item(TransitionActivity1::class.java, "转场动画"))
         addItem(Item(TcpSocketActivity::class.java, "TCP Socket"))
+        addItem(Item(AidlActivity::class.java, "AIDL"))
     }
 
     private fun addItem(item: Item) {
