@@ -1,7 +1,6 @@
 rootProject.name = 'Template'
 include ':app',
-        ':XFramework',
-        ':ipc'
+        ':XFramework'
 
 if (!aar.toBoolean()) {
     include ':LearnGradle'
