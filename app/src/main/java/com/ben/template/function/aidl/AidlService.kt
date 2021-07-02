@@ -3,9 +3,9 @@ package com.ben.template.function.aidl
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
-import android.util.Log
 import com.ben.template.aidl.Book
 import com.ben.template.aidl.IBookManager
+import com.ben.template.aidl.IOnNewBookArrivedListener
 import java.util.concurrent.CopyOnWriteArrayList
 
 /**
@@ -16,6 +16,7 @@ import java.util.concurrent.CopyOnWriteArrayList
 class AidlService : Service() {
 
     private val remoteBookList = CopyOnWriteArrayList<Book>()
+    private val listenerList = CopyOnWriteArrayList<IOnNewBookArrivedListener>()
 
     override fun onCreate() {
         super.onCreate()
@@ -24,12 +25,24 @@ class AidlService : Service() {
 
     private val binder = object : IBookManager.Stub() {
         override fun getBookList(): MutableList<Book> {
-            Log.i("JKL", "AidlService - getBookList: ${Thread.currentThread().name}")
             return remoteBookList
         }
 
         override fun addBook(book: Book) {
             bookList.add(book)
+            listenerList.forEach {
+                it.onNewBookArrived(book)
+            }
+        }
+
+        override fun registerListener(l: IOnNewBookArrivedListener) {
+            if (!listenerList.contains(l)) {
+                listenerList.add(l)
+            }
+        }
+
+        override fun unRegisterListener(l: IOnNewBookArrivedListener) {
+            listenerList.remove(l)
         }
 
     }

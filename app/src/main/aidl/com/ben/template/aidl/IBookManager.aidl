@@ -3,7 +3,7 @@ package com.ben.template.aidl;
 
 import com.ben.template.aidl.Book;
 
-//import com.ben.template.aidl.IOnNewBookArrivedListener;
+import com.ben.template.aidl.IOnNewBookArrivedListener;
 
 // Declare any non-default types here with import statements
 
@@ -12,7 +12,7 @@ interface IBookManager {
 
    void addBook(in Book book);
 
-//   void registerListener(IOnNewBookArrivedListener listener);
-//
-//   void unRegisterListener(IOnNewBookArrivedListener listener);
+   void registerListener(IOnNewBookArrivedListener listener);
+
+   void unRegisterListener(IOnNewBookArrivedListener listener);
 }
