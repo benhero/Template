@@ -2,8 +2,10 @@ package com.ben.template.function.aidl
 
 import android.app.Service
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.IBinder
 import android.os.RemoteCallbackList
+import android.util.Log
 import com.ben.template.aidl.Book
 import com.ben.template.aidl.IBookManager
 import com.ben.template.aidl.IOnNewBookArrivedListener
@@ -52,7 +54,13 @@ class AidlService : Service() {
 
     }
 
-    override fun onBind(intent: Intent): IBinder {
+    override fun onBind(intent: Intent): IBinder? {
+        val check =
+            checkCallingOrSelfPermission("com.ben.template.permission.ACCESS_BOOK_SERVICE")
+        if (check != PackageManager.PERMISSION_GRANTED) {
+            Log.e("JKL", "客户端缺少必要权限!")
+            return null
+        }
         return binder
     }
 }
