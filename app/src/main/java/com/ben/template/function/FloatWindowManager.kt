@@ -62,6 +62,7 @@ object FloatWindowManager {
                     WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
 //        xor WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
         params.gravity = Gravity.CENTER
+//        params.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_NOSENSOR
         val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         windowManager.addView(btn, params)
 
