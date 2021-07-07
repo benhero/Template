@@ -6,7 +6,7 @@ import android.os.Parcelable;
 /**
  * 书
  *
- * @author chenbenbin
+ * @author Benhero
  * @date 2021/7/1
  */
 public class Book implements Parcelable {

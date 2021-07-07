@@ -13,7 +13,6 @@
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
-
     <uses-permission android:name="com.ben.template.permission.ACCESS_BOOK_SERVICE" />
 
     <permission
@@ -30,7 +29,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".function.aidl.AidlActivity" />
         <activity
             android:name=".function.task.TaskActivity"
             android:screenOrientation="portrait" />
@@ -109,6 +107,12 @@
         <activity
             android:name=".function.socket.TcpSocketActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.aidl.AidlActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.aidl.AidlPoolActivity"
+            android:screenOrientation="portrait" />
 
         <service
             android:name=".function.external.StaticWallpaper"
@@ -123,7 +127,6 @@
                 android:name="android.service.wallpaper"
                 android:resource="@xml/live_wallpaper" />
         </service>
-
         <service
             android:name=".function.socket.TCPServerService"
             android:enabled="true"
@@ -136,6 +139,11 @@
             android:process=":remote" />
         <service
             android:name=".function.aidl.AidlService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+        <service
+            android:name=".function.aidl.AidlPoolService"
             android:enabled="true"
             android:exported="true"
             android:process=":remote" />
