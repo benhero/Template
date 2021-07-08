@@ -11,7 +11,7 @@ import com.ben.template.XApplication
  * @date   2021-02-19
  */
 enum class ActionItem(val action: String) {
-    BROWSER("打开浏览器"),
+    BROWSER("系统默认浏览器"),
     WINDOW("悬浮窗");
 }
 

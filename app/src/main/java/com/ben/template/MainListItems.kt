@@ -25,44 +25,64 @@ object MainListItems {
     private val ITEM_MAP = HashMap<Class<*>, Item>()
 
     init {
-        addItem(Item(RecyclerViewActivity::class.java, "RecyclerView"))
-        addItem(Item(ShapeActivity::class.java, "Shape图形"))
-        addItem(Item(CoroutineActivity::class.java, "协程"))
-        addItem(Item(AutoSizeActivity::class.java, "自适应"))
-        addItem(Item(ConstraintLayoutActivity::class.java, "ConstraintLayout"))
-        addItem(Item(RetrofitActivity::class.java, "Retrofit"))
-        addItem(Item(MotionLayoutActivity::class.java, "MotionLayout"))
-        addItem(Item(ExternalActivity::class.java, "应用外弹出"))
-        addItem(Item(AppListActivity::class.java, "应用列表"))
-        addItem(Item(WebViewActivity::class.java, "浏览器"))
-        addItem(Item(ActionItem::class.java, ActionItem.BROWSER.action))
-        addItem(Item(AsyncTestActivity::class.java, "异步回调监听处理"))
-        addItem(Item(KotlinActivity::class.java, "Kotlin"))
-        addItem(Item(TaskActivity::class.java, "任务流"))
-        addItem(Item(ActionItem::class.java, ActionItem.WINDOW.action))
-        addItem(Item(MessengerActivity::class.java, "Messenger"))
-        addItem(Item(TransitionActivity1::class.java, "转场动画"))
-        addItem(Item(TcpSocketActivity::class.java, "TCP Socket"))
-        addItem(Item(AidlActivity::class.java, "AIDL"))
-        addItem(Item(AidlPoolActivity::class.java, "AIDL连接池"))
+        addItem(Item(ItemType.TITLE, null, "视图"))
+        addItem(Item(ItemType.ITEM, RecyclerViewActivity::class.java, "RecyclerView"))
+        addItem(Item(ItemType.ITEM, ConstraintLayoutActivity::class.java, "ConstraintLayout"))
+        addItem(Item(ItemType.ITEM, MotionLayoutActivity::class.java, "MotionLayout"))
+        addItem(Item(ItemType.ITEM, ShapeActivity::class.java, "Shape图形"))
+        addItem(Item(ItemType.ITEM, AutoSizeActivity::class.java, "自适应"))
+        addItem(Item(ItemType.ITEM, TransitionActivity1::class.java, "转场动画"))
+        addItem(Item(ItemType.ITEM, ActionItem::class.java, ActionItem.WINDOW.action))
+
+        addItem(Item(ItemType.TITLE, null, "工具"))
+        addItem(Item(ItemType.ITEM, AsyncTestActivity::class.java, "异步回调监听处理"))
+        addItem(Item(ItemType.ITEM, TaskActivity::class.java, "任务流"))
+        addItem(Item(ItemType.ITEM, KotlinActivity::class.java, "Kotlin"))
+
+        addItem(Item(ItemType.TITLE, null, "Binder"))
+        addItem(Item(ItemType.ITEM, MessengerActivity::class.java, "Messenger"))
+        addItem(Item(ItemType.ITEM, TcpSocketActivity::class.java, "TCP Socket"))
+        addItem(Item(ItemType.ITEM, AidlActivity::class.java, "AIDL"))
+        addItem(Item(ItemType.ITEM, AidlPoolActivity::class.java, "AIDL连接池"))
+
+        addItem(Item(ItemType.TITLE, null, "Jetpack"))
+        addItem(Item(ItemType.ITEM, CoroutineActivity::class.java, "协程"))
+
+        addItem(Item(ItemType.TITLE, null, "杂项"))
+        addItem(Item(ItemType.ITEM, RetrofitActivity::class.java, "Retrofit"))
+        addItem(Item(ItemType.ITEM, ExternalActivity::class.java, "应用外弹出"))
+        addItem(Item(ItemType.ITEM, AppListActivity::class.java, "应用列表"))
+        addItem(Item(ItemType.ITEM, WebViewActivity::class.java, "浏览器"))
+        addItem(Item(ItemType.ITEM, ActionItem::class.java, ActionItem.BROWSER.action))
     }
 
     private fun addItem(item: Item) {
         ITEMS.add(item)
-        ITEM_MAP[item.className] = item
+        val className = item.className
+        if (className != null) {
+            ITEM_MAP[className] = item
+        }
     }
 
     fun getIndex(className: Class<*>): Int {
         return ITEMS.indexOf(ITEM_MAP[className])
     }
 
-    fun getClass(index: Int): Class<*> {
+    fun getClass(index: Int): Class<*>? {
         return ITEMS[index].className
     }
 
-    class Item(val className: Class<*>, val content: String) {
+    class Item(
+        val type: ItemType,
+        val className: Class<*>?,
+        val content: String
+    ) {
         override fun toString(): String {
             return content
         }
+    }
+
+    enum class ItemType {
+        TITLE, ITEM
     }
 }
