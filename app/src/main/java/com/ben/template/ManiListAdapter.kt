@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
 import androidx.recyclerview.widget.RecyclerView
+import com.ben.template.databinding.MainListBottomLayoutBindingImpl
+import com.ben.template.databinding.MainListTitleLayoutBindingImpl
 import com.ben.template.function.ActionItem
 import com.ben.template.function.dispatchAction
 
@@ -22,14 +25,29 @@ class ManiListAdapter : RecyclerView.Adapter<ManiListAdapter.AbsViewHolder>() {
     companion object {
         private const val TYPE_ITEM = 1
         private const val TYPE_TITLE = 2
+        private const val TYPE_BOTTOM = 3
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AbsViewHolder {
         return when (viewType) {
             TYPE_TITLE -> {
                 TitleViewHolder(
-                    LayoutInflater.from(parent.context)
-                        .inflate(R.layout.main_list_title_layout, parent, false)
+                    DataBindingUtil.inflate<MainListTitleLayoutBindingImpl>(
+                        LayoutInflater.from(parent.context),
+                        R.layout.main_list_title_layout,
+                        parent,
+                        false
+                    ).root
+                )
+            }
+            TYPE_BOTTOM -> {
+                BottomViewHolder(
+                    DataBindingUtil.inflate<MainListBottomLayoutBindingImpl>(
+                        LayoutInflater.from(parent.context),
+                        R.layout.main_list_bottom_layout,
+                        parent,
+                        false
+                    ).root
                 )
             }
             else -> {
@@ -50,9 +68,9 @@ class ManiListAdapter : RecyclerView.Adapter<ManiListAdapter.AbsViewHolder>() {
         val item = list[index]
 
         val itemViewType = getItemViewType(index)
-        holder.title.text = item.content
         when (itemViewType) {
             TYPE_ITEM -> {
+                (holder as ItemViewHolder).title.text = item.content
                 holder.itemView.setOnClickListener {
                     if (item.className == ActionItem::class.java) {
                         dispatchAction(item.content)
@@ -66,6 +84,9 @@ class ManiListAdapter : RecyclerView.Adapter<ManiListAdapter.AbsViewHolder>() {
                 }
             }
             TYPE_TITLE -> {
+                (holder as TitleViewHolder).title.text = item.content
+            }
+            TYPE_BOTTOM -> {
 
             }
             else -> {
@@ -78,32 +99,39 @@ class ManiListAdapter : RecyclerView.Adapter<ManiListAdapter.AbsViewHolder>() {
             MainListItems.ItemType.TITLE -> {
                 TYPE_TITLE
             }
+            MainListItems.ItemType.BOTTOM -> {
+                TYPE_BOTTOM
+            }
             else -> {
                 TYPE_ITEM
             }
         }
     }
 
-    abstract class AbsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        abstract val title: TextView
-    }
+    abstract class AbsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     class ItemViewHolder(itemView: View) : AbsViewHolder(itemView) {
-        override val title: TextView
+        val title: TextView
             get() = itemView.findViewById(R.id.main_list_item_text)
     }
 
     class TitleViewHolder(itemView: View) : AbsViewHolder(itemView) {
-        override val title: TextView
+        val title: TextView
             get() = itemView.findViewById(R.id.main_list_title_text)
     }
 
+    class BottomViewHolder(itemView: View) : AbsViewHolder(itemView)
+
     class GridSpanSizeLookup : SpanSizeLookup() {
         override fun getSpanSize(position: Int): Int {
-            return if (MainListItems.ITEMS[position].type == MainListItems.ItemType.TITLE) {
-                2
-            } else {
-                1
+            return when (MainListItems.ITEMS[position].type) {
+                MainListItems.ItemType.TITLE,
+                MainListItems.ItemType.BOTTOM -> {
+                    2
+                }
+                else -> {
+                    1
+                }
             }
         }
     }

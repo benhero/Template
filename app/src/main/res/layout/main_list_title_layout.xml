@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="30dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/main_list_title_text"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_vertical"
-        android:background="@color/colorPrimary"
-        android:gravity="center_vertical"
-        android:paddingStart="16dp"
-        android:textColor="#FFF"
-        android:textSize="18sp"
-        tools:text="Test" />
+        android:layout_height="46dp"
+        android:background="@color/main_bg">
 
-</FrameLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <TextView
+            android:id="@+id/main_list_title_text"
+            solidColor="@{@color/colorPrimary}"
+            topLeftRadius="@{12}"
+            topRightRadius="@{12}"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            tools:text="Test" />
+
+    </FrameLayout>
+
+</layout>
