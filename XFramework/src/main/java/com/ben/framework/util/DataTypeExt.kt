@@ -19,3 +19,9 @@ val Float.dp
 
 val Int.dp
     get() = this.toFloat().dp.toInt()
+
+/**
+ * 对数字类型的进行判空后再转Float类型
+ */
+val Number?.safeFloat
+    get() = this?.toFloat() ?: 0f

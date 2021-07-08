@@ -23,12 +23,17 @@ import androidx.databinding.BindingAdapter
  */
 @BindingAdapter(
     "gradientStart", "gradientCenter", "gradientEnd",
-    "solidColor", "cornerRadius",
+    "solidColor",
+    "cornerRadius", "topLeftRadius", "topRightRadius", "bottomLeftRadius", "bottomRightRadius",
     "gradientAngle", "strokeColor", "strokeWidth", requireAll = false
 )
 fun setShape(
     view: View, start: Any?, center: Any?, end: Any?,
-    solidColor: Any?, cornerRadius: Int, angle: Int?,
+    solidColor: Any?,
+    cornerRadius: Int?,
+    topLeftRadius: Int?, topRightRadius: Int?,
+    bottomLeftRadius: Int?, bottomRightRadius: Int?,
+    angle: Int?,
     strokeColor: Any?, strokeWidth: Int?
 ) {
     val drawable = GradientDrawable()
@@ -49,12 +54,29 @@ fun setShape(
 
     drawable.setSize(view.width, view.height)
     drawable.shape = GradientDrawable.RECTANGLE
-    drawable.cornerRadius = cornerRadius.toFloat().dp
+    if (cornerRadius != null) {
+        drawable.cornerRadius = cornerRadius.toFloat().dp
+    } else {
+        drawable.cornerRadii = parseCornerRadius(
+            topLeftRadius, topRightRadius,
+            bottomLeftRadius, bottomRightRadius
+        )
+    }
 
     if (strokeColor != null) {
         drawable.setStroke((strokeWidth ?: 1).dp, exchangeColor(strokeColor))
     }
     view.background = drawable
+}
+
+/**
+ * 处理边角转化
+ */
+private fun parseCornerRadius(tl: Int?, tr: Int?, bl: Int?, br: Int?): FloatArray {
+    return floatArrayOf(
+        tl.safeFloat.dp, tl.safeFloat.dp, tr.safeFloat.dp, tr.safeFloat.dp,
+        bl.safeFloat.dp, bl.safeFloat.dp, br.safeFloat.dp, br.safeFloat.dp
+    )
 }
 
 private fun parseAngle(angle: Int? = 0): GradientDrawable.Orientation {
