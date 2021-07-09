@@ -7,12 +7,15 @@ import com.ben.template.function.app.AppListActivity
 import com.ben.template.function.coroutine.CoroutineActivity
 import com.ben.template.function.external.ExternalActivity
 import com.ben.template.function.live.AsyncTestActivity
+import com.ben.template.function.livedata.LiveDataActivity
 import com.ben.template.function.messenger.MessengerActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
 import com.ben.template.function.retrofit.RetrofitActivity
+import com.ben.template.function.room.RoomActivity
 import com.ben.template.function.socket.TcpSocketActivity
 import com.ben.template.function.task.TaskActivity
 import com.ben.template.function.transition.TransitionActivity1
+import com.ben.template.function.viewmodel.ViewModelActivity
 
 /**
  * 主界面列表选项
@@ -29,7 +32,6 @@ object MainListItems {
         addItem(Item(ItemType.ITEM, RecyclerViewActivity::class.java, "RecyclerView"))
         addItem(Item(ItemType.ITEM, ConstraintLayoutActivity::class.java, "ConstraintLayout"))
         addItem(Item(ItemType.ITEM, MotionLayoutActivity::class.java, "MotionLayout"))
-        addItem(Item(ItemType.ITEM, ShapeActivity::class.java, "Shape图形"))
         addItem(Item(ItemType.ITEM, AutoSizeActivity::class.java, "自适应"))
         addItem(Item(ItemType.ITEM, TransitionActivity1::class.java, "转场动画"))
         addItem(Item(ItemType.ITEM, ActionItem::class.java, ActionItem.WINDOW.action))
@@ -49,7 +51,11 @@ object MainListItems {
         addItem(Item(ItemType.BOTTOM, null, ""))
 
         addItem(Item(ItemType.TITLE, null, "Jetpack"))
+        addItem(Item(ItemType.ITEM, LiveDataActivity::class.java, "LiveData"))
+        addItem(Item(ItemType.ITEM, ViewModelActivity::class.java, "ViewModel"))
+        addItem(Item(ItemType.ITEM, RoomActivity::class.java, "Room"))
         addItem(Item(ItemType.ITEM, CoroutineActivity::class.java, "协程"))
+        addItem(Item(ItemType.ITEM, ShapeActivity::class.java, "Shape图形"))
         addItem(Item(ItemType.BOTTOM, null, ""))
 
         addItem(Item(ItemType.TITLE, null, "杂项"))

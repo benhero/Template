@@ -79,10 +79,14 @@ dependencies {
     implementation dependencies.'constraint-layout'
     implementation dependencies.'recyclerview'
     implementation dependencies.'material'
+    implementation dependencies.'room-runtime'
+    kapt dependencies.'room-compiler'
+    implementation dependencies.'room-ktx'
+    implementation dependencies.'lifecycle-extensions'
+    implementation dependencies.'lifecycle-viewmodel-ktx'
 
     implementation dependencies.'retrofit'
     implementation dependencies.'retrofit-gson'
 
     implementation dependencies.'walle'
-
 }
