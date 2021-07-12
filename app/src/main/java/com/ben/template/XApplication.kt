@@ -25,7 +25,6 @@ class XApplication : Application() {
         initLog()
     }
 
-
     private fun initLog() {
         val builder = LogConfiguration.Builder()
         builder.tag("JKL")
