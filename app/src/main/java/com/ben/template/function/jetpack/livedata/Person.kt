@@ -1,4 +1,4 @@
-package com.ben.template.function.livedata
+package com.ben.template.function.jetpack.livedata
 
 /**
  * 测试数据Bean

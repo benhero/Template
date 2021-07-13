@@ -1,4 +1,4 @@
-package com.ben.template.function.livedata
+package com.ben.template.function.jetpack.livedata
 
 import android.os.Bundle
 import android.view.View

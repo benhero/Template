@@ -1,4 +1,4 @@
-package com.ben.template.function.viewmodel
+package com.ben.template.function.jetpack.viewmodel
 
 
 import android.os.Bundle
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.ben.template.R
 import kotlinx.android.synthetic.main.fragment_view_model_fragment_1.*

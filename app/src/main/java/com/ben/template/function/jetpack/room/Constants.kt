@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.ben.template.function.room
+package com.ben.template.function.jetpack.room
 
 /**
  * Constants used throughout the app.

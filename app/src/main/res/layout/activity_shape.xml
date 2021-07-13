@@ -12,7 +12,7 @@
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="18dp"
-            tools:context=".function.ShapeActivity">
+            tools:context=".function.jetpack.ShapeActivity">
 
             <View
                 cornerRadius="@{18}"

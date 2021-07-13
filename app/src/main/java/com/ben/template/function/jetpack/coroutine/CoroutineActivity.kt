@@ -1,4 +1,4 @@
-package com.ben.template.function.coroutine
+package com.ben.template.function.jetpack.coroutine
 
 import android.graphics.BitmapFactory
 import android.os.Bundle

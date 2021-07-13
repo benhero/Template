@@ -1,4 +1,4 @@
-package com.ben.template.function.room
+package com.ben.template.function.jetpack.room
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

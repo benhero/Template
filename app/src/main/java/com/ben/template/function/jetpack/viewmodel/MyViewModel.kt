@@ -1,4 +1,4 @@
-package com.ben.template.function.viewmodel
+package com.ben.template.function.jetpack.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

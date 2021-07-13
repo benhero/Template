@@ -1,4 +1,4 @@
-package com.ben.template.function.viewmodel
+package com.ben.template.function.jetpack.viewmodel
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

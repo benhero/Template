@@ -67,8 +67,7 @@ class ManiListAdapter : RecyclerView.Adapter<ManiListAdapter.AbsViewHolder>() {
         val context = holder.itemView.context
         val item = list[index]
 
-        val itemViewType = getItemViewType(index)
-        when (itemViewType) {
+        when (getItemViewType(index)) {
             TYPE_ITEM -> {
                 (holder as ItemViewHolder).title.text = item.content
                 holder.itemView.setOnClickListener {

@@ -56,10 +56,10 @@
             android:name=".function.AutoSizeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".function.coroutine.CoroutineActivity"
+            android:name=".function.jetpack.coroutine.CoroutineActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".function.ShapeActivity"
+            android:name=".function.jetpack.ShapeActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".function.external.ExternalActivity"
@@ -114,16 +114,16 @@
             android:name=".function.aidl.AidlPoolActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".function.livedata.LiveDataActivity"
+            android:name=".function.jetpack.livedata.LiveDataActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".function.viewmodel.ViewModelActivity"
+            android:name=".function.jetpack.viewmodel.ViewModelActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".function.room.RoomActivity"
+            android:name=".function.jetpack.room.RoomActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".function.room.RoomActivity2"
+            android:name=".function.jetpack.room.RoomActivity2"
             android:screenOrientation="portrait" />
 
         <service
