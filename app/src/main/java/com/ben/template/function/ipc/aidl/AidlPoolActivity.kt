@@ -1,4 +1,4 @@
-package com.ben.template.function.aidl
+package com.ben.template.function.ipc.aidl
 
 import android.os.Bundle
 import android.util.Log

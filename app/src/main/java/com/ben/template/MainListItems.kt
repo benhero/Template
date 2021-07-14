@@ -1,19 +1,19 @@
 package com.ben.template
 
 import com.ben.template.function.*
-import com.ben.template.function.aidl.AidlActivity
-import com.ben.template.function.aidl.AidlPoolActivity
+import com.ben.template.function.ipc.aidl.AidlActivity
+import com.ben.template.function.ipc.aidl.AidlPoolActivity
 import com.ben.template.function.app.AppListActivity
 import com.ben.template.function.jetpack.coroutine.CoroutineActivity
 import com.ben.template.function.external.ExternalActivity
 import com.ben.template.function.jetpack.ShapeActivity
 import com.ben.template.function.live.AsyncTestActivity
 import com.ben.template.function.jetpack.livedata.LiveDataActivity
-import com.ben.template.function.messenger.MessengerActivity
+import com.ben.template.function.ipc.messenger.MessengerActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
 import com.ben.template.function.retrofit.RetrofitActivity
 import com.ben.template.function.jetpack.room.RoomActivity
-import com.ben.template.function.socket.TcpSocketActivity
+import com.ben.template.function.ipc.socket.TcpSocketActivity
 import com.ben.template.function.task.TaskActivity
 import com.ben.template.function.transition.TransitionActivity1
 import com.ben.template.function.jetpack.viewmodel.ViewModelActivity

@@ -1,4 +1,4 @@
-package com.ben.template.function.messenger
+package com.ben.template.function.ipc.messenger
 
 import android.content.ComponentName
 import android.content.Intent
@@ -7,7 +7,7 @@ import android.os.*
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.ben.template.R
-import com.ben.template.function.messenger.MessengerService.Companion.MSG_FROM_SERVICE
+import com.ben.template.function.ipc.messenger.MessengerService.Companion.MSG_FROM_SERVICE
 import kotlinx.android.synthetic.main.activity_messenger.*
 
 /**

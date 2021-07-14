@@ -1,11 +1,11 @@
-package com.ben.template.function.messenger
+package com.ben.template.function.ipc.messenger
 
 import android.app.Service
 import android.content.Intent
 import android.os.*
 import android.util.Log
-import com.ben.template.function.messenger.MessengerActivity.Companion.MSG_FROM_CLIENT
-import com.ben.template.function.messenger.MessengerActivity.Companion.MSG_KEY
+import com.ben.template.function.ipc.messenger.MessengerActivity.Companion.MSG_FROM_CLIENT
+import com.ben.template.function.ipc.messenger.MessengerActivity.Companion.MSG_KEY
 
 /**
  * 消息服务

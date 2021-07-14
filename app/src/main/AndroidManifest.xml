@@ -96,22 +96,22 @@
             android:name=".function.KotlinActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".function.messenger.MessengerActivity"
+            android:name=".function.ipc.messenger.MessengerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.ipc.socket.TcpSocketActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.ipc.aidl.AidlActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.ipc.aidl.AidlPoolActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".function.transition.TransitionActivity1"
             android:screenOrientation="portrait" />
         <activity
             android:name=".function.transition.TransitionActivity2"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".function.socket.TcpSocketActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".function.aidl.AidlActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".function.aidl.AidlPoolActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".function.jetpack.livedata.LiveDataActivity"
@@ -140,22 +140,22 @@
                 android:resource="@xml/live_wallpaper" />
         </service>
         <service
-            android:name=".function.socket.TCPServerService"
+            android:name=".function.ipc.socket.TCPServerService"
             android:enabled="true"
             android:exported="true"
             android:process=":remote" />
         <service
-            android:name=".function.messenger.MessengerService"
+            android:name=".function.ipc.messenger.MessengerService"
             android:enabled="true"
             android:exported="true"
             android:process=":remote" />
         <service
-            android:name=".function.aidl.AidlService"
+            android:name=".function.ipc.aidl.AidlService"
             android:enabled="true"
             android:exported="true"
             android:process=":remote" />
         <service
-            android:name=".function.aidl.AidlPoolService"
+            android:name=".function.ipc.aidl.AidlPoolService"
             android:enabled="true"
             android:exported="true"
             android:process=":remote" />

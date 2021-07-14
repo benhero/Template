@@ -1,4 +1,4 @@
-package com.ben.template.function.socket
+package com.ben.template.function.ipc.socket
 
 import android.annotation.SuppressLint
 import android.content.Intent

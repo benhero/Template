@@ -1,4 +1,4 @@
-package com.ben.template.function.aidl
+package com.ben.template.function.ipc.aidl
 
 import com.ben.template.aidl.pool.IPlus
 

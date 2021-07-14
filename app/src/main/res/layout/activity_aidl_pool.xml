@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".function.aidl.AidlPoolActivity">
+    tools:context=".function.ipc.aidl.AidlPoolActivity">
 
     <TextView
         android:id="@+id/aidl_pool_text"
