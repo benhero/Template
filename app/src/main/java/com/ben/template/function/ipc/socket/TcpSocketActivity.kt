@@ -22,7 +22,7 @@ import java.util.*
  * @author Benhero
  * @date   2021/6/29
  */
-class TcpSocketActivity : AppCompatActivity(), View.OnClickListener {
+class TcpSocketActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClickListener {
     private var mClientSocket: Socket? = null
 
     @SuppressLint("HandlerLeak")
@@ -54,6 +54,7 @@ class TcpSocketActivity : AppCompatActivity(), View.OnClickListener {
             }
         }.start()
         socket_like_btn.setOnClickListener(this)
+        socket_like_btn.setOnLongClickListener(this)
         socket_coin_btn.setOnClickListener(this)
         socket_collect_btn.setOnClickListener(this)
     }
@@ -130,6 +131,17 @@ class TcpSocketActivity : AppCompatActivity(), View.OnClickListener {
             socket_collect_btn -> {
                 send("收藏")
             }
+        }
+    }
+
+    override fun onLongClick(v: View?): Boolean {
+        return when (v) {
+            socket_like_btn -> {
+                send("一键三连")
+                true
+            }
+            else ->
+                false
         }
     }
 

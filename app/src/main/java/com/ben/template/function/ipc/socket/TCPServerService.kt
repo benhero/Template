@@ -18,14 +18,6 @@ import java.util.*
  */
 class TCPServerService : Service() {
     private var mIsServiceDestroyed = false
-    private val mDefinedMessage = arrayOf(
-        "给次机会我啊",
-        "怎么给你机会？",
-        "我以前没得选，现在我选回做好人",
-        "好啊，你去跟法官说啊，看他给不给你当",
-        "你这是让我死？",
-        "对唔住，我是差人"
-    )
 
     override fun onCreate() {
         Thread(TcpServer()).start()
@@ -76,10 +68,8 @@ class TCPServerService : Service() {
             val str = input.readLine()
                 ?: //客户端断开连接
                 break
-            val i = Random().nextInt(mDefinedMessage.size)
-            val msg = mDefinedMessage[i]
-            out.println("收到《$str》- $msg")
-            Log.i("JKL", "服务器: 收到客户端消息《$str》，发送《$msg》")
+            out.println("收到《$str》")
+            Log.i("JKL", "服务器: 收到客户端消息《$str》")
         }
         //客户端退出的操作
         Log.e("JKL", "服务器: 接收到客户端关闭")
