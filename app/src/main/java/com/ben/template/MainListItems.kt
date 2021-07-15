@@ -1,22 +1,24 @@
 package com.ben.template
 
 import com.ben.template.function.*
+import com.ben.template.function.app.AppListActivity
+import com.ben.template.function.external.ExternalActivity
 import com.ben.template.function.ipc.aidl.AidlActivity
 import com.ben.template.function.ipc.aidl.AidlPoolActivity
-import com.ben.template.function.app.AppListActivity
-import com.ben.template.function.jetpack.coroutine.CoroutineActivity
-import com.ben.template.function.external.ExternalActivity
-import com.ben.template.function.jetpack.ShapeActivity
-import com.ben.template.function.live.AsyncTestActivity
-import com.ben.template.function.jetpack.livedata.LiveDataActivity
 import com.ben.template.function.ipc.messenger.MessengerActivity
+import com.ben.template.function.ipc.socket.TcpSocketActivity
+import com.ben.template.function.jetpack.ShapeActivity
+import com.ben.template.function.jetpack.coroutine.CoroutineActivity
+import com.ben.template.function.jetpack.livedata.LiveDataActivity
+import com.ben.template.function.jetpack.room.RoomActivity
+import com.ben.template.function.jetpack.viewmodel.ViewModelActivity
+import com.ben.template.function.kotlin.InternalFunctionActivity
+import com.ben.template.function.kotlin.KotlinActivity
+import com.ben.template.function.live.AsyncTestActivity
 import com.ben.template.function.recycler.RecyclerViewActivity
 import com.ben.template.function.retrofit.RetrofitActivity
-import com.ben.template.function.jetpack.room.RoomActivity
-import com.ben.template.function.ipc.socket.TcpSocketActivity
 import com.ben.template.function.task.TaskActivity
 import com.ben.template.function.transition.TransitionActivity1
-import com.ben.template.function.jetpack.viewmodel.ViewModelActivity
 
 /**
  * 主界面列表选项
@@ -38,10 +40,14 @@ object MainListItems {
         addItem(Item(ItemType.ITEM, ActionItem::class.java, ActionItem.WINDOW.action))
         addItem(Item(ItemType.BOTTOM, null, ""))
 
+        addItem(Item(ItemType.TITLE, null, "Kotlin"))
+        addItem(Item(ItemType.ITEM, KotlinActivity::class.java, "Kotlin"))
+        addItem(Item(ItemType.ITEM, InternalFunctionActivity::class.java, "内联拓展方法"))
+        addItem(Item(ItemType.BOTTOM, null, ""))
+
         addItem(Item(ItemType.TITLE, null, "工具"))
         addItem(Item(ItemType.ITEM, AsyncTestActivity::class.java, "异步回调监听处理"))
         addItem(Item(ItemType.ITEM, TaskActivity::class.java, "任务流"))
-        addItem(Item(ItemType.ITEM, KotlinActivity::class.java, "Kotlin"))
         addItem(Item(ItemType.BOTTOM, null, ""))
 
         addItem(Item(ItemType.TITLE, null, "Binder"))

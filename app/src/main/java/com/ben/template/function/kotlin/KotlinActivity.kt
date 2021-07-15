@@ -1,4 +1,4 @@
-package com.ben.template.function
+package com.ben.template.function.kotlin
 
 import android.os.Bundle
 import android.util.Log

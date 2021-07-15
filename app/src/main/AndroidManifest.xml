@@ -93,7 +93,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".function.KotlinActivity"
+            android:name=".function.kotlin.KotlinActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.kotlin.InternalFunctionActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".function.ipc.messenger.MessengerActivity"
