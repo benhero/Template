@@ -3,6 +3,7 @@ package com.ben.template.function
 import android.content.Intent
 import android.net.Uri
 import com.ben.template.XApplication
+import com.ben.template.function.view.FloatWindowManager
 
 /**
  * 动作列表项

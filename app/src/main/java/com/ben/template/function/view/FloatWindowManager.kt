@@ -1,4 +1,4 @@
-package com.ben.template.function
+package com.ben.template.function.view
 
 import android.content.Context
 import android.content.Intent

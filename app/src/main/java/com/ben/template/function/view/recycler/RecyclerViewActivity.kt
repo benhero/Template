@@ -1,4 +1,4 @@
-package com.ben.template.function.recycler
+package com.ben.template.function.view.recycler
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

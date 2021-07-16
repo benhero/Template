@@ -15,10 +15,13 @@ import com.ben.template.function.jetpack.viewmodel.ViewModelActivity
 import com.ben.template.function.kotlin.InternalFunctionActivity
 import com.ben.template.function.kotlin.KotlinActivity
 import com.ben.template.function.live.AsyncTestActivity
-import com.ben.template.function.recycler.RecyclerViewActivity
+import com.ben.template.function.view.recycler.RecyclerViewActivity
 import com.ben.template.function.retrofit.RetrofitActivity
 import com.ben.template.function.task.TaskActivity
-import com.ben.template.function.transition.TransitionActivity1
+import com.ben.template.function.view.AutoSizeActivity
+import com.ben.template.function.view.ConstraintLayoutActivity
+import com.ben.template.function.view.MotionLayoutActivity
+import com.ben.template.function.view.transition.TransitionActivity1
 
 /**
  * 主界面列表选项

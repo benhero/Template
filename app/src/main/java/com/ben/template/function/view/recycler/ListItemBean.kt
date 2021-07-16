@@ -1,4 +1,4 @@
-package com.ben.template.function.recycler
+package com.ben.template.function.view.recycler
 
 /**
  * 列表数据

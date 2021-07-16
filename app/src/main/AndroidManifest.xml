@@ -44,16 +44,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".function.MotionLayoutActivity"
+            android:name="com.ben.template.function.view.recycler.RecyclerViewActivity"
+            android:label="RecyclerView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.view.MotionLayoutActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".function.retrofit.RetrofitActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".function.ConstraintLayoutActivity"
+            android:name=".function.view.ConstraintLayoutActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".function.AutoSizeActivity"
+            android:name=".function.view.AutoSizeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ben.template.function.view.transition.TransitionActivity1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ben.template.function.view.transition.TransitionActivity2"
             android:screenOrientation="portrait" />
         <activity
             android:name=".function.jetpack.coroutine.CoroutineActivity"
@@ -71,10 +81,6 @@
             android:screenOrientation="portrait"
             android:showOnLockScreen="true"
             android:showWhenLocked="true" />
-        <activity
-            android:name=".function.recycler.RecyclerViewActivity"
-            android:label="RecyclerView"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".function.app.AppListActivity"
             android:screenOrientation="portrait" />
@@ -109,12 +115,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".function.ipc.aidl.AidlPoolActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".function.transition.TransitionActivity1"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".function.transition.TransitionActivity2"
             android:screenOrientation="portrait" />
         <activity
             android:name=".function.jetpack.livedata.LiveDataActivity"

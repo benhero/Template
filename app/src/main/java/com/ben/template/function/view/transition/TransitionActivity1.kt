@@ -1,4 +1,4 @@
-package com.ben.template.function.transition
+package com.ben.template.function.view.transition
 
 import android.app.ActivityOptions
 import android.content.Intent
