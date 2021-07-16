@@ -37,7 +37,7 @@ class AsyncTestFragment : Fragment(), View.OnClickListener {
             async_button1 -> {
                 Test().back(object : AsyncListener {
                     override fun onAsyncDone() {
-                        Log.i("JKL", "Btn3: ${async_button1.hashCode()}")
+                        Log.i("JKL", "Btn1: ${async_button1.hashCode()}")
                     }
                 })
                 activity?.onBackPressed()
