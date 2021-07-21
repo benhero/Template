@@ -16,6 +16,7 @@ class KotlinActivity : AppCompatActivity() {
         setContentView(R.layout.activity_kotlin)
 //        array()
         random()
+        KotlinBasic.test()
     }
 
     private fun array() {
