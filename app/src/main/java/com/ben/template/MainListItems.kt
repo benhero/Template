@@ -1,6 +1,7 @@
 package com.ben.template
 
-import com.ben.template.function.*
+import com.ben.template.function.ActionItem
+import com.ben.template.function.WebViewActivity
 import com.ben.template.function.app.AppListActivity
 import com.ben.template.function.external.ExternalActivity
 import com.ben.template.function.ipc.aidl.AidlActivity
@@ -15,12 +16,13 @@ import com.ben.template.function.jetpack.viewmodel.ViewModelActivity
 import com.ben.template.function.kotlin.InternalFunctionActivity
 import com.ben.template.function.kotlin.KotlinActivity
 import com.ben.template.function.live.AsyncTestActivity
-import com.ben.template.function.view.recycler.RecyclerViewActivity
 import com.ben.template.function.retrofit.RetrofitActivity
 import com.ben.template.function.task.TaskActivity
+import com.ben.template.function.thread.ThreadStatusActivity
 import com.ben.template.function.view.AutoSizeActivity
 import com.ben.template.function.view.ConstraintLayoutActivity
 import com.ben.template.function.view.MotionLayoutActivity
+import com.ben.template.function.view.recycler.RecyclerViewActivity
 import com.ben.template.function.view.transition.TransitionActivity1
 
 /**
@@ -69,6 +71,7 @@ object MainListItems {
         addItem(Item(ItemType.BOTTOM, null, ""))
 
         addItem(Item(ItemType.TITLE, null, "杂项"))
+        addItem(Item(ItemType.ITEM, ThreadStatusActivity::class.java, "线程状态"))
         addItem(Item(ItemType.ITEM, RetrofitActivity::class.java, "Retrofit"))
         addItem(Item(ItemType.ITEM, ExternalActivity::class.java, "应用外弹出"))
         addItem(Item(ItemType.ITEM, AppListActivity::class.java, "应用列表"))
