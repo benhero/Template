@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.ben.framework.LiveListener
+import com.ben.framework.live
 import com.ben.template.R
 import kotlinx.android.synthetic.main.fragment_async.*
 import kotlinx.coroutines.*
@@ -51,9 +52,11 @@ class AsyncTestFragment : Fragment(), View.OnClickListener {
                 activity?.onBackPressed()
             }
             async_button3 -> {
-                Test().back3(LiveListener(lifecycle, Runnable {
-                    Log.i("JKL", "Btn3: ${async_button3.hashCode()}")
-                }))
+                Test().back3(object : AsyncListener {
+                    override fun onAsyncDone() {
+                        Log.i("JKL", "Btn3: ${async_button3.hashCode()}")
+                    }
+                }.live(lifecycle))
                 activity?.onBackPressed()
             }
             else -> {
@@ -88,11 +91,11 @@ class AsyncTestFragment : Fragment(), View.OnClickListener {
             }
         }
 
-        fun back3(listener: LiveListener<Runnable>) {
+        fun back3(listener: AsyncListener) {
             CoroutineScope(Dispatchers.IO).launch {
                 delay(5000)
                 withContext(Dispatchers.Main) {
-                    listener.listener()?.run()
+                    listener.onAsyncDone()
                 }
             }
         }
