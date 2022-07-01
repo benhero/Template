@@ -20,11 +20,11 @@ object KotlinBasic {
     val oneMillion = 1_000_000
 
     init {
-        forTest()
+//        forTest()
     }
 
     fun test() {
-        stringTest()
+        byTest()
     }
 
     private fun calculateTest() {
@@ -143,4 +143,30 @@ object KotlinBasic {
             Log.i("JKL", "the element at $index is $value")
         }
     }
+
+    /**
+     * 通过 by 关键字将接口的实现委托给传入的成员变量，
+     * 需要修改的函数再去override即可
+     */
+    private fun byTest() {
+        val test = TestListener()
+        object : ITestListener by test {
+            override fun onListener() {
+                test.onListener()
+                Log.i("JKL", "onListener: === 2")
+            }
+        }.onListener()
+    }
+
+    interface ITestListener {
+        fun onListener()
+    }
+
+    class TestListener :ITestListener {
+
+        override fun onListener() {
+            Log.i("JKL", "onListener: === 1")
+        }
+    }
+
 }
